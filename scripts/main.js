@@ -3,9 +3,11 @@ function startTime() {
     var h=today.getHours();
     var m=today.getMinutes();
     var s=today.getSeconds();
+    var ms=today.getMilliseconds();
     m = checkTime(m);
     s = checkTime(s);
-    document.getElementById('txt').innerHTML = h+":"+m+":"+s;
+    ms = checkTime(ms);
+    document.getElementById('txt').innerHTML = h+":"+m+":"+s + ":" + ms;
     var t = setTimeout(function(){startTime()},500);
     setSeconds(s);
     setMinutes(m);
