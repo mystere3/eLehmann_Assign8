@@ -6,12 +6,19 @@ function startTime() {
     var ms=today.getMilliseconds();
     m = checkTime(m);
     s = checkTime(s);
-    ms = checkTime(ms);
+    //ms = checkTime(ms);
     document.getElementById('txt').innerHTML = h+":"+m+":"+s + ":" + ms;
     var t = setTimeout(function(){startTime()},500);
     setSeconds(s);
     setMinutes(m);
     setHours(h);
+
+    if(s % 2 === 0) {
+        $("body").css('background-color', 'yellow');
+    } else {
+        $("body").css('background-color', 'orange');
+    }
+
 }
 
 function checkTime(i) {
@@ -24,6 +31,8 @@ function setSeconds(n) {
     $("#seconds").css({ WebkitTransform: 'rotate(' + rotateBy + 'deg)'});
     // For Mozilla browser: e.g. Firefox
     $("#seconds").css({ '-moz-transform': 'rotate(' + rotateBy + 'deg)'});
+
+
 }
 function setMinutes(n) {
     var rotateBy = n * 6;
