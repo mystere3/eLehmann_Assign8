@@ -1,3 +1,18 @@
+$(function() {
+    $("#twitButton").hide();
+    $("#twitButton")
+        .css('opacity', 0)
+        .slideDown('slow')
+        .animate(
+            { opacity: 1 },
+            { queue: false, duration: 'slow' }
+
+        );
+
+
+    
+})
+
 function startTime() {
     var today=new Date();
     var h=today.getHours();
@@ -47,3 +62,4 @@ function setHours(n) {
     $("#hours").css({ '-moz-transform': 'rotate(' + rotateBy + 'deg)'});
 
 }
+
