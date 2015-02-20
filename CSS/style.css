@@ -53,3 +53,43 @@
 	cursor: pointer;
 	
 }
+
+#leftBox{
+	border: solid 1px purple;
+}
+#rightBox{
+	border: solid 1px blue;
+}
+#myForm{
+	font-family: "Impact", Charcoal, sans-serif;
+	font-size: 12pt;
+}
+.warnLines{
+	font-family: "Impact", Charcoal, sans-serif;
+	font-size: 20pt;
+	text-align: center;
+}
+#approveImage{
+	border: solid 1px yellow;
+	width:300px;
+	height:300px;
+	//background-image: url(../images/suspiciousFace.png);
+	margin-left: auto;
+	margin-right: auto;
+}
+#suspFace{
+	position: absolute;
+	z-index: 1;
+	opacity: 1;
+}
+#angFace{
+	position: absolute;
+	z-index: 2;
+	opacity: 0;
+}#hapFace{
+	position: absolute;
+	z-index: 3;
+	opacity: 0;
+}
+
+

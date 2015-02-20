@@ -1,3 +1,14 @@
+// TEACHERS STUFF
+
+// function showAlert(msg) {
+//     $("#message").html(msg);
+//     $("#messageContainer").show();
+// }
+
+var user = "user";
+var pass = "1234";
+var attempts = 0;
+
 $(function() {
     $("#twitButton").hide();
     $("#twitButton")
@@ -9,9 +20,54 @@ $(function() {
 
         );
 
+    $("#twitButton").click(function() {
+    window.open("twitMain.html", "_self");
+    })
 
+    $("#myForm").submit(function(e) {
+        e.preventDefault();
+        var entName = document.forms["myForm"]["userName"].value;
+        var entPass = document.forms["myForm"]["password"].value;
+        if (entName === user && entPass === pass) {
+            //alert("yes" + " " + entName + " " + entPass); // TEST
+            rightPass();
+        } else {
+            //alert("no" + " " + entName + " " + entPass);  // TEST
+            wrongPass();
+        };
+    });
+
+    // TEACHERS STUFF
+
+    // $("#myForm").submit(function(e) {
+    //     e.preventDefault();
+    //     var password = $("#pw").val();
+    //     if (password.length <= 6) {
+    //         showAlert("password must be > 6 characters");
+    //     }
+    // }
     
 })
+
+function wrongPass() {
+    alert("wrong");       // TEST
+    play_single_sound();
+}
+
+function rightPass() {
+    alert("right");       // TEST
+}
+
+function play_single_sound() {
+    console.log("should play a sound next");
+    document.getElementById('wrongTune').play();
+}
+
+$("#twitButton").click(function() {
+    window.open("twitMain.html");
+})
+
+// CLOCK STUFF
 
 function startTime() {
     var today=new Date();
