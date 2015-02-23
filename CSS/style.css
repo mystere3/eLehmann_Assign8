@@ -32,17 +32,22 @@
 	
 }
 #twitBanner{
-	border: solid 2px green;
+	/*border: solid 2px green;*/
 	width: 100%;
 	height: 200px;
 	background-image: url("../images/twits.jpg");
 	background-repeat: repeat-x;
 }
 #twitTitle{
-	border: solid 2px orange;
+	border: solid 2px #555;
+	background-color: #83b7dc;
 	font-family: "Impact", Charcoal, sans-serif;
 	font-size: 28pt;
 	text-align: center;
+	color: black;
+}
+.myRow {
+	background-color: #83b7dc;
 }
 #twitContent{
 	font-family: "Impact", Charcoal, sans-serif;
@@ -53,12 +58,18 @@
 	cursor: pointer;
 	
 }
+.sidebars {
+	/*border: solid 2px green;*/
+	background-color: #83b7dc;
+	height: 80vh;
+	
+}
 
 #leftBox{
-	border: solid 1px purple;
+	/*border: solid 1px purple;*/
 }
 #rightBox{
-	border: solid 1px blue;
+	/*border: solid 1px blue;*/
 }
 #myForm{
 	font-family: "Impact", Charcoal, sans-serif;
@@ -68,9 +79,42 @@
 	font-family: "Impact", Charcoal, sans-serif;
 	font-size: 20pt;
 	text-align: center;
+	color: black;
+}
+
+.my-button{
+	padding: 7px 15px;
+	margin: 0px;
+	border: 2px solid #83b7dc;
+	color: #BBB;
+	background-color: #333;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 4px;
+	font-family: "Impact", Charcoal, sans-serif;
+	font-size: 20pt;
+
+}
+.my-button:hover{
+	color: #333;
+	background-color: #BBB;
+	border: 2px solid #83b7dc;
+}
+
+#approveButton {
+	opacity: 0.0;
+	font-family: "Impact", Charcoal, sans-serif;
+	font-size: 20pt;
+}
+
+#denial {
+	font-family: "Impact", Charcoal, sans-serif;
+	font-size: 36pt;
+	text-align: center;
+	color: black;
 }
 #approveImage{
-	border: solid 1px yellow;
+	/*border: solid 1px yellow;*/
 	width:300px;
 	height:300px;
 	//background-image: url(../images/suspiciousFace.png);

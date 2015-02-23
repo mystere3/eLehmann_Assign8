@@ -8,6 +8,7 @@
 var user = "user";
 var pass = "1234";
 var attempts = 0;
+var maxAttempts = 3;
 
 $(function() {
     $("#twitButton").hide();
@@ -21,7 +22,7 @@ $(function() {
         );
 
     $("#twitButton").click(function() {
-    window.open("twitMain.html", "_self");
+    window.open("twitApprove.html", "_self");
     })
 
     $("#myForm").submit(function(e) {
@@ -50,12 +51,51 @@ $(function() {
 })
 
 function wrongPass() {
-    alert("wrong");       // TEST
+    //alert("wrong");       // TEST
+    
+    attempts++;
+    switch(attempts) {
+        case 1:
+            $("#angFace")
+                .css('opacity', 0.33)
+                .rotate(-45);
+            $("#line1").html("WRONG!")
+            $("#line2").html("You have 2 attempts remaining.");
+            $(".myRow").css("background-color", "yellow");
+            break;
+        case 2:
+            $("#angFace")
+                .css('opacity', 0.66)
+                .rotate(45);
+            $("#line1").html("STILL WRONG!")
+            $("#line2").html("You have 1 attempt remaining.");
+            $(".myRow").css("background-color", "orange");
+            break;
+        case 3:
+            $("#angFace")
+                .css('opacity', 1.0)
+                .rotate(0);
+            $("#line1").html("Oh my, you don't belong here.");
+            $("#line2").html("No attempts remain.");
+            $("#myForm").css('opacity', 0.0);
+            $("#denial").html("DENIED");
+            $(".myRow").css("background-color", "red");
+            break;
+        default:
+            alert("attempts variable out of scope - " + attempts);
+    }
     play_single_sound();
+
 }
 
 function rightPass() {
-    alert("right");       // TEST
+    //alert("right");       // TEST
+    $("#myForm").css('opacity', 0.0);
+    $("#approveButton").css('opacity', 1.0);
+    $("#hapFace").css('opacity', 1.0);
+    $("#line1").html("CORRECT!");
+    $("#line2").html("You have the key to our everlasting soul.");
+    $(".myRow").css("background-color", "rgb(131,183,220)");
 }
 
 function play_single_sound() {
@@ -63,9 +103,14 @@ function play_single_sound() {
     document.getElementById('wrongTune').play();
 }
 
-$("#twitButton").click(function() {
-    window.open("twitMain.html");
-})
+jQuery.fn.rotate = function(degrees) {
+    $(this).css({'-webkit-transform' : 'rotate('+ degrees +'deg)',
+                 '-moz-transform' : 'rotate('+ degrees +'deg)',
+                 '-ms-transform' : 'rotate('+ degrees +'deg)',
+                 'transform' : 'rotate('+ degrees +'deg)'});
+    return $(this);
+};
+
 
 // CLOCK STUFF
 
@@ -89,21 +134,17 @@ function startTime() {
     } else {
         $("body").css('background-color', 'orange');
     }
-
 }
 
 function checkTime(i) {
     if (i<10) {i = "0" + i};  // add zero in front of numbers < 10
     return i;
 }
-
 function setSeconds(n) {
     var rotateBy = n * 6;
     $("#seconds").css({ WebkitTransform: 'rotate(' + rotateBy + 'deg)'});
     // For Mozilla browser: e.g. Firefox
     $("#seconds").css({ '-moz-transform': 'rotate(' + rotateBy + 'deg)'});
-
-
 }
 function setMinutes(n) {
     var rotateBy = n * 6;
@@ -116,6 +157,5 @@ function setHours(n) {
     $("#hours").css({ WebkitTransform: 'rotate(' + rotateBy + 'deg)'});
     // For Mozilla browser: e.g. Firefox
     $("#hours").css({ '-moz-transform': 'rotate(' + rotateBy + 'deg)'});
-
 }
 
