@@ -46,6 +46,32 @@
 	text-align: center;
 	color: black;
 }
+#navBox{
+  width: 100%;
+  background-color: #5c829c;
+  /*position: fixed;*/
+  top: 133px;
+  left: 0;
+  right: 0;
+  border-top: 2pt solid #000;
+  border-bottom: 2pt solid #000;
+  padding: 6px;
+}
+
+ul.nav{
+	list-style: none;
+	padding: 0;
+  	margin-top: 0px;
+  	margin-bottom: 0px;
+}
+ul.nav li{
+	display: inline;
+	
+}
+.nav>li>a {
+	display: inline;
+	padding: 3px 3px;
+}
 .myRow {
 	background-color: #83b7dc;
 }
@@ -100,6 +126,26 @@
 	background-color: #BBB;
 	border: 2px solid #83b7dc;
 }
+.my-button-b {
+	/*width: 200px;*/
+	padding: 0px;
+	margin: 0px;
+	border: 2px solid #83b7dc;
+	color: #BBB;
+	background-color: #333;
+	text-decoration: none;
+	display: inline-block;
+	border-radius: 4px;
+	font-family: "Impact", Charcoal, sans-serif;
+	font-size: 12pt;
+	transition: all 0.5s ease 0.1s;
+}
+.my-button-b:hover{
+	color: #333;
+	background-color: #BBB;
+	border: 2px solid #83b7dc;
+	padding: 7px;
+}
 
 #approveButton {
 	opacity: 0.0;
@@ -130,10 +176,20 @@
 	position: absolute;
 	z-index: 2;
 	opacity: 0;
-}#hapFace{
+}
+#hapFace{
 	position: absolute;
 	z-index: 3;
 	opacity: 0;
 }
+#hapFace_Main {
+	margin-left: auto;
+	margin-right: auto;
+	width: 6em;
+}
 
+
+#OSspan {
+	color: #FFF;
+}
 

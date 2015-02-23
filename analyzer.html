@@ -15,7 +15,8 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
-		<link rel="stylesheet" type="text/css" href="CSS/animate.css">
+		<!-- <link rel="stylesheet" type="text/css" href="CSS/animate.css"> -->
+		<link rel="stylesheet" type="text/css" href="CSS/metalButtons.css">
 		
 		<script src="scripts/main.js"></script>
 	</head>
@@ -59,11 +60,19 @@
 			<div class="row myRow">
 				<div class="col-md-2 col-sm-0 sidebars"></div>
 				<div class="col-md-8" id="leftBox">
-					<div class="bounce">
-						<img src="images/happyFace.png">
+					<div class="pane">
+						<h1>System Analizer</h1>
+						<span class="button" onclick="osTest()"><p>OS</p></span>
+						<span class="button"><p>Browser Info</p></span>
+						<span class="button"><p>H</p></span>
+						<span class="button"><p>S</p></span>
+						<span class="button"><p>U</p></span>
+						<span class="button"><p>A</p></span>
 					</div>
-					<span class="bounce">TEST</span>
 					
+					<div id="pane2" class="pane">
+						<p><h2>Your OS: <span id="OSspan"></span></h2></p>
+					</div>
 				
 				</div>
 				<div class="col-md-2 col-sm-0 sidebars"></div>
