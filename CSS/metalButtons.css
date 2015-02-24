@@ -58,7 +58,7 @@ h1:after { content: " - " }
 span { margin: 20px }
 #pane2 {
     text-align: left;
-
+    height: 425px;
 
 }
 p,

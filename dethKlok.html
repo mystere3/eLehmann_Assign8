@@ -15,12 +15,11 @@
 		<!-- Latest compiled and minified JavaScript -->
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
-		<!-- <link rel="stylesheet" type="text/css" href="CSS/animate.css"> -->
-		<link rel="stylesheet" type="text/css" href="CSS/metalButtons.css">
+		<link rel="stylesheet" type="text/css" href="CSS/animate.css">
 		
 		<script src="scripts/main.js"></script>
 	</head>
-	<body>
+	<body onload="startTime()">
 		<audio id="wrongTune" src="images/wrongTune.wav" preload="auto"></audio>
 		
 		<div id="twitBanner"></div>
@@ -59,23 +58,16 @@
 		<div class="container">
 			<div class="row myRow">
 				<!-- <div class="col-md-2 col-sm-0 sidebars"></div> -->
-				<div class="col-md-8 col-md-offset-2" id="leftBox">
-					<div class="pane">
-						<h1>System Analyzer</h1>
-						<span class="button" onclick="osTest()"><p>OS</p></span>
-						<span class="button" onclick="platTest()"><p>Platform</p></span>
-						<span class="button" onclick="agentHead()"><p>Agent</p></span>
-						<span class="button" onclick="cookieTest()"><p>Cookies</p></span>
-						<!-- <span class="button"><p>U</p></span> -->
-						<!-- <span class="button"><p>A</p></span> -->
+				<div class="col-md-8 col-md-offset-2 sidebars" id="leftBox">
+					<div id="txt"></div>
+
+					<div id="clock">
+						<img id="face" src="images/ClockFace.png">
+						<img id="hours" src="images/Hours.png">
+						<img id="minutes" src="images/Minutes.png">
+						<img id="seconds" src="images/Seconds.png">
 					</div>
 					
-					<div id="pane2" class="pane">
-						<p><h2>Your OS: <span id="OSspan" class="sysInf"></span></h2></p>
-						<p><h2>Your Platform: <span id="platSpan" class="sysInf"></span></h2></p>
-						<p><h2>Agent Header: <span id="agentSpan" class="sysInf"></span></h2></p>
-						<p><h2>Cookies: <span id="cookieSpan" class="sysInf"></span></h2></p>
-					</div>
 				
 				</div>
 				<!-- <div class="col-md-2 col-sm-0 sidebars"></div> -->

@@ -5,12 +5,18 @@
 //     $("#messageContainer").show();
 // }
 
+
+
+
 var user = "user";
 var pass = "1234";
 var attempts = 0;
 var maxAttempts = 3;
 
 $(function() {
+
+    // SPLASH ANIMATION AND ENTRY 
+
     $("#twitButton").hide();
     $("#twitButton")
         .css('opacity', 0)
@@ -24,6 +30,8 @@ $(function() {
     $("#twitButton").click(function() {
     window.open("twitApprove.html", "_self");
     })
+
+    // PASSWORD STUFF
 
     $("#myForm").submit(function(e) {
         e.preventDefault();
@@ -51,6 +59,8 @@ $(function() {
 
     
 })
+
+// PASSWORD SCREEN
 
 function wrongPass() {
     //alert("wrong");       // TEST
@@ -87,7 +97,6 @@ function wrongPass() {
             alert("attempts variable out of scope - " + attempts);
     }
     play_single_sound();
-
 }
 
 function rightPass() {
@@ -132,9 +141,9 @@ function startTime() {
     setHours(h);
 
     if(s % 2 === 0) {
-        $("body").css('background-color', 'yellow');
+        $("body").css('background-color', 'rgb(85,85,85)');
     } else {
-        $("body").css('background-color', 'orange');
+        $("body").css('background-color', 'rgb(92,130,156)');
     }
 }
 
@@ -165,28 +174,40 @@ function setHours(n) {
 
 
 
-    // SYSTEM ANALIZER
+// SYSTEM ANALIZER
 
-    // This script sets OSName variable as follows:
-    // "Windows"    for all versions of Windows
-    // "MacOS"      for all versions of Macintosh OS
-    // "Linux"      for all versions of Linux
-    // "UNIX"       for all other UNIX flavors 
-    // "Unknown OS" indicates failure to detect the OS
+// This script sets OSName variable as follows:
+// "Windows"    for all versions of Windows
+// "MacOS"      for all versions of Macintosh OS
+// "Linux"      for all versions of Linux
+// "UNIX"       for all other UNIX flavors 
+// "Unknown OS" indicates failure to detect the OS
 
-    var OSName="Unknown OS";
-    if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
-    if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
-    if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
-    if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
+var OSName="Unknown OS";
+if (navigator.appVersion.indexOf("Win")!=-1) OSName="Windows";
+if (navigator.appVersion.indexOf("Mac")!=-1) OSName="MacOS";
+if (navigator.appVersion.indexOf("X11")!=-1) OSName="UNIX";
+if (navigator.appVersion.indexOf("Linux")!=-1) OSName="Linux";
 
-    function osTest() {
-        $("#OSspan").html(OSName);
-    }
+function osTest() {
+    $("#OSspan").html(OSName);
+}
 
+function platTest() {
+    var x = navigator.platform;
+    $("#platSpan").html(x);
+}
 
+function agentHead() {
+    var x = navigator.userAgent;
+    $("#agentSpan").html(x);
+}
 
-
+function cookieTest() {
+    var x = navigator.cookieEnabled;
+    var txt = x === true ? "Enabled" : "Disabled";
+    $("#cookieSpan").html(txt);
+}
 
 
 
