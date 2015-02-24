@@ -193,3 +193,7 @@ ul.nav li{
 	color: #FFF;
 }
 
+#resizeAutohide {
+	opacity: 0;
+}
+

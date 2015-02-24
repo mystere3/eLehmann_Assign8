@@ -56,7 +56,6 @@ $(function() {
     //     }
     // }
 
-
     
 })
 
@@ -138,7 +137,7 @@ function startTime() {
     var t = setTimeout(function(){startTime()},500);
     setSeconds(s);
     setMinutes(m);
-    setHours(h);
+    setHours(h, m);
 
     if(s % 2 === 0) {
         $("body").css('background-color', 'rgb(85,85,85)');
@@ -163,8 +162,8 @@ function setMinutes(n) {
       // For Mozilla browser: e.g. Firefox
     $("#minutes").css({ '-moz-transform': 'rotate(' + rotateBy + 'deg)'});
 }
-function setHours(n) {
-    var rotateBy = n * 30;
+function setHours(h, m) {
+    var rotateBy = (h * 30) + (m * 0.5);
     $("#hours").css({ WebkitTransform: 'rotate(' + rotateBy + 'deg)'});
     // For Mozilla browser: e.g. Firefox
     $("#hours").css({ '-moz-transform': 'rotate(' + rotateBy + 'deg)'});
@@ -209,9 +208,24 @@ function cookieTest() {
     $("#cookieSpan").html(txt);
 }
 
+var sizeShown = false;
+
+function sizeTest() {
+    var w = $(window).height() + " w"
+    var h = $(window).width() + " h";
+    $("#sizeSpan").html(w + " " + h);
+    sizeShown = true;
+}
 
 
 
+$(window).resize(function() {
+    //alert("test");
+    if (sizeShown === true) {
+        sizeTest();
+    };
+
+});
 
 
 
