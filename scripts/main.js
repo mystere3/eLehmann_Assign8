@@ -17,7 +17,9 @@ $(function() {
 
     // SPLASH ANIMATION AND ENTRY 
 
-    $("#twitButton").hide();
+    $("#twitButton")
+        .hide()
+        .delay(500);
     $("#twitButton")
         .css('opacity', 0)
         .slideDown('slow')
@@ -75,11 +77,18 @@ $(function() {
             //insert lightbox HTML into page
             $('body').append(lightbox);
         }
+        $("html")
+            .css("position", "fixed")
+            .css("width", "100%");
 
+        $('img').bind('contextmenu', function(e) {
+            return false;
+        }); 
     });
 
     $('#lightbox').live('click', function() {
         $('#lightbox').hide();
+        $("html").css("position", "static");
     });
 
 
@@ -131,6 +140,12 @@ function wrongPass() {
             $("#myForm").css('opacity', 0.0);
             $("#denial").html("DENIED");
             $(".myRow").css("background-color", "red");
+            // removeElement("#submitButton");
+            // removeElement("#approveButton");
+            var elem = document.getElementById('submitButton');
+            elem.parentNode.removeChild(elem);
+            var elem = document.getElementById('approveButton');
+            elem.parentNode.removeChild(elem);
             break;
         default:
             alert("attempts variable out of scope - " + attempts);
@@ -160,6 +175,11 @@ jQuery.fn.rotate = function(degrees) {
                  'transform' : 'rotate('+ degrees +'deg)'});
     return $(this);
 };
+
+function removeElement(id) {
+    var elem = document.getElementById('id');
+    elem.parentNode.removeChild(elem);
+}
 
 
 // CLOCK STUFF
