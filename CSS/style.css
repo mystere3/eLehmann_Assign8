@@ -117,7 +117,7 @@ ul.nav li{
 /* APPROVAL PAGE */
 
 #approveButton {
-	opacity: 0.0;
+	display: none;
 	font-family: "Impact", Charcoal, sans-serif;
 	font-size: 20pt;
 }

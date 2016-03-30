@@ -142,10 +142,11 @@ function wrongPass() {
             $(".myRow").css("background-color", "red");
             // removeElement("#submitButton");
             // removeElement("#approveButton");
-            var elem = document.getElementById('submitButton');
-            elem.parentNode.removeChild(elem);
-            var elem = document.getElementById('approveButton');
-            elem.parentNode.removeChild(elem);
+            // var elem = document.getElementById('submitButton');
+            // elem.parentNode.removeChild(elem);
+            // var elem = document.getElementById('approveButton');
+            // elem.parentNode.removeChild(elem);
+            $("#myForm").hide();
             break;
         default:
             alert("attempts variable out of scope - " + attempts);
@@ -161,6 +162,7 @@ function rightPass() {
     $("#line1").html("CORRECT!");
     $("#line2").html("You have the key to our everlasting soul.");
     $(".myRow").css("background-color", "rgb(131,183,220)");
+    $("#approveButton").show();
 }
 
 function play_single_sound() {
@@ -229,10 +231,6 @@ function setHours(h, m) {
     $("#hours").css({ '-moz-transform': 'rotate(' + rotateBy + 'deg)'});
 }
 
-
-
-
-
 // SYSTEM ANALIZER
 
 // This script sets OSName variable as follows:
@@ -276,7 +274,6 @@ function sizeTest() {
     $("#sizeSpan").html(w + " " + h);
     sizeShown = true;
 }
-
 
 
 $(window).resize(function() {
